@@ -12,20 +12,22 @@ let li4 = document.querySelector('.item4')
 
 let liArr = [li1, li2, li3, li4]
 
-console.dir(li2.className.split('').reverse()[0]);
+liArr.forEach((li) => {
+    li.style.height = '128px'
+})
 
 function checker(num) {
-    inpArr.forEach((inp) => {
-        if (inp.className.split('').reverse()[0] != num) {
-            inp.checked = true
-        } 
-    })
     liArr.forEach((li) => {
         if (li.className.split('').reverse()[0] == num) {
             li.style.height === '128px' ? li.style.height = '310px' : li.style.height = '128px'; 
         } else {
             li.style.height = '128px';  
         }
+    })
+    inpArr.forEach((inp) => {
+        if (inp.className.split('').reverse()[0] != num) {
+            inp.checked = true
+        } 
     })
 }
 
