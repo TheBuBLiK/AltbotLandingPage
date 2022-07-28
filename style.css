@@ -49,6 +49,12 @@ body {
   font-weight: 600;
 }
 
+.wrapper_line_img {
+  position: absolute;
+  left: -10px;
+  bottom: -348px;
+}
+
 .wrapper_right {
   width: 50%;
 }
