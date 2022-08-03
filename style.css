@@ -34,6 +34,12 @@ body {
   font-weight: 700;
 }
 
+.wrapper_line {
+  position: absolute;
+  bottom: -50px;
+  left: -30px;
+}
+
 .wrapper_description {
   font-weight: 700;
   margin: 37px 0 65px;
@@ -51,34 +57,13 @@ body {
 
 .wrapper_right {
   width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .wrapper_blue {
   color: rgba(91, 141, 255, 1);
   font-size: 3rem;
-}
-
-@media only screen and (max-width: 1461px) {
-  * {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .wrapper_left {
-    width: 100%;
-  }
-  .wrapper_right {
-    width: 100%;
-  }
-  .wrapper_img {
-    display: none;
-  }
 }
 
 .item1,
@@ -96,8 +81,6 @@ body {
 .item4 {
   margin-left: 126px;
 }
-
-
 
 .img {
   width: 49px;
@@ -123,11 +106,14 @@ body {
 }
 
 #faq {
-  margin-top: 155px;
-  margin-left: 153px;
+  margin-top: 50px;
   height: 660px;
   width: 494px;
-  background: linear-gradient(267.39deg, rgba(72, 83, 114, 0.192) 52.02%, rgba(46, 58, 90, 0.8) 97.72%);
+  background: linear-gradient(
+    267.39deg,
+    rgba(72, 83, 114, 0.192) 52.02%,
+    rgba(46, 58, 90, 0.8) 97.72%
+  );
   border-width: 1px 0px 1px 1px;
   border-style: solid;
   border-color: rgba(58, 67, 94, 1);
@@ -168,13 +154,13 @@ ul li i:after {
   padding-left: 12px;
   margin: 0;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 #faq p {
   color: white;
   text-align: left;
-  font-size: .815rem;
+  font-size: 0.815rem;
   position: relative;
   overflow: hidden;
   max-height: 250px;
@@ -189,7 +175,7 @@ ul li i:after {
 
 .preview {
   color: white;
-  font-size: .815rem;
+  font-size: 0.815rem;
   opacity: 0.5;
 }
 
@@ -218,7 +204,7 @@ ul li i:after {
 }
 
 #faq ul li {
-  background: #232E4B;
+  background: #232e4b;
   border-width: 1px 0px 1px 1px;
   border-style: solid;
   border-color: #313956;
@@ -227,7 +213,7 @@ ul li i:after {
   width: 402px;
   height: 128px;
   position: relative;
-  transition: height .5s ease;
+  transition: height 0.5s ease;
   overflow: hidden;
 }
 
@@ -235,7 +221,7 @@ ul li i:after {
   display: flex;
 }
 
-#faq ul li+li {
+#faq ul li + li {
   margin-top: 15px;
 }
 
@@ -252,9 +238,9 @@ ul li i:after {
 
 #faq ul li i:before,
 ul li i:after {
-  content: "";
+  content: '';
   position: absolute;
-  background-color: #A1A1A1;
+  background-color: #a1a1a1;
   width: 2px;
   height: 13px;
 }
@@ -267,7 +253,7 @@ ul li i:after {
   transform: translate(3.8px, 0) rotate(-45deg);
 }
 
-#faq ul li input[type=checkbox] {
+#faq ul li input[type='checkbox'] {
   position: absolute;
   cursor: pointer;
   width: 100%;
@@ -277,11 +263,11 @@ ul li i:after {
   touch-action: manipulation;
 }
 
-#faq ul li input[type=checkbox]:checked~h2 {
+#faq ul li input[type='checkbox']:checked ~ h2 {
   color: #000;
 }
 
-#faq ul li input[type=checkbox]:checked~p {
+#faq ul li input[type='checkbox']:checked ~ p {
   /*margin-top: 0;*/
   max-height: 0;
   /* transition: 1s; */
@@ -289,16 +275,79 @@ ul li i:after {
   /*transform: translate(0, 50%);*/
 }
 
-#faq ul li input[type=checkbox]:checked~i:before {
+#faq ul li input[type='checkbox']:checked ~ i:before {
   transform: translate(4.5px, 0) rotate(225deg);
 }
 
-#faq ul li input[type=checkbox]:checked~i:after {
+#faq ul li input[type='checkbox']:checked ~ i:after {
   transform: translate(-3.4px, 0) rotate(-225deg);
 }
-
 
 ul {
   padding: 0;
   list-style: none;
+}
+
+@media only screen and (max-width: 1461px) {
+  * {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .wrapper_img {
+    left: 0;
+  }
+}
+@media only screen and (max-width: 1700px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .wrapper_left {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .wrapper_img {
+    margin-left: auto;
+    margin-right: auto;
+    top: 50px;
+    left: 150px;
+    right: 0;
+    text-align: center;
+  }
+  .wrapper_right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #faq {
+    margin: 500px 0 0;
+  }
+}
+
+@media only screen and (max-width: 1340px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .wrapper_left {
+    width: 100%;
+  }
+  .wrapper_right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper_img {
+    display: none;
+  }
+  .wrapper_line {
+    display: none;
+  }
+  #faq {
+    margin: 100px 0 0;
+  }
 }
